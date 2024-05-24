@@ -7,17 +7,23 @@ import Product from "./Pages/Product";
 import Cart from "./Pages/Cart";
 import LoginSignUp from "./Pages/LoginSignUp";
 import Footer from "./Components/Footer/Footer";
+import men_banner from './Components/Assets/banner_mens.png'
+import women_banner from './Components/Assets/banner_women.png'
+import kids_banner from  './Components/Assets/banner_kids.png'
+// import ShopContextProvider from './Context/ShopContext';
 
 const App = () => {
   return (
+    
     <BrowserRouter>
+    {/* <ShopContextProvider>  */}
     <Navbar/>
   
       <Routes>
         <Route path="/" element={<Shop/>} />
-        <Route  path="/mens" element={<ShopCategory category="mens"/>} /> 
-        <Route path="/womens" element={<ShopCategory category="womens"/>} />
-        <Route path="/kids" element={<ShopCategory category="kids"/>} />
+        <Route  path="/mens" element={<ShopCategory banner={men_banner} category="mens"/>} /> 
+        <Route path="/womens" element={<ShopCategory banner={women_banner} category="womens"/>} />
+        <Route path="/kids" element={<ShopCategory banner={kids_banner}  category="kids"/>} />
         
         <Route path="/product" element={<Product/>}>
            <Route path=":productId" element={<Product/>}/>
@@ -27,7 +33,10 @@ const App = () => {
         <Route path="/login" element={<LoginSignUp/>}/>
       </Routes>
       <Footer/>
+      {/* </ShopContextProvider> */}
     </BrowserRouter>
+    
+   
   );
 };
 
