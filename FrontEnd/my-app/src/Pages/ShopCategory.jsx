@@ -21,8 +21,9 @@ const ShopCategory = (props) => {
         </div>
       </div>
       <div className="shopcategory-products">
+        {console.log(props.category,all_product, 'qwertyuiuy5676543456545' )}
         {all_product.map((item,i) => {
-          if (props.Category===item.Category) {
+          if (props.category===item.category) {
             return (
               <Item
                 key={i}
